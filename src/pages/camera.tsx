@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback } from 'react';
 import Webcam from "react-webcam";
-// import './styles.css';
+import styles from "../styles/camera.module.css";
 import {
   DetectFacesRequest,
   DetectFacesResponse,
@@ -16,9 +16,11 @@ import { Buffer } from 'buffer';
 // @ts-ignore
 // window.Buffer = Buffer;
 
+
+
 const videoConstraints = {
-  width: 720,
-  height: 360,
+  width: 540,
+  height: 720,
   facingMode: "user",
 };
 
@@ -101,12 +103,12 @@ export const Camera = () => {
         <h1>カメラアプリ （顔分析付き) </h1>
       </header>
       {isCaptureEnable || (
-        <button onClick={() => setCaptureEnable(true)}>開始</button>
+        <button className={styles.startbutton}onClick={() => setCaptureEnable(true)}>開始</button>
       )}
       {isCaptureEnable && (
         <>
          <div>
-          <button onClick={() => setCaptureEnable(false)}>終了</button>
+          <button className={styles.endbutton} onClick={() => setCaptureEnable(false)}>終了</button>
          </div>
          <div>
           <Webcam
@@ -118,7 +120,7 @@ export const Camera = () => {
              videoConstraints={videoConstraints}
             />
          </div>
-         <button onClick={capture}>キャプチャ</button>
+         <button className={styles.capturebutton}onClick={capture}></button>
         </>
       )}
       {url && (

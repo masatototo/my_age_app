@@ -10,7 +10,7 @@ export const Home = () => {
       </div>
       <h1>My Age 顔診断</h1>
       <Link href="/camera" className={styles.camerabutton} >
-      <div className={styles.startbutton}>Start</div>
+      <div className={styles.playbutton}>Play</div>
       </Link>
     </div>
   )
