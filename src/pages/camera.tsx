@@ -99,6 +99,9 @@ export const Camera = () => {
 
   return (
     <>
+    <main className='photoarea'>
+
+    
       <header>
         <h1>カメラアプリ （顔分析付き) </h1>
       </header>
@@ -121,6 +124,7 @@ export const Camera = () => {
             />
          </div>
          <button className={styles.capturebutton}onClick={capture}></button>
+         <button className={styles.outer_capturebutton}></button>
         </>
       )}
       {url && (
@@ -158,6 +162,7 @@ export const Camera = () => {
          )}
        </>
       )}
+      </main>
     </>
     );
   };

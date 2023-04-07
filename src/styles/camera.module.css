@@ -1,8 +1,27 @@
 .capturebutton {
+    z-index: 1;
+    right: 20rem;
+    position: absolute;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
     background-color:white;
     border-color: black;
-    border-style: double;
+    border: solid;
+}
+
+.outer_capturebutton {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: white;
+    border-color: white;
+    border-width: thin;
+}
+
+.photoarea {
+    position: relative;
+    height: 100vh;
+    background-color: black;
 }
