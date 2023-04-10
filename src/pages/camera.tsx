@@ -74,7 +74,7 @@ const getIsWearingSunGlasses = (
 
 export const Camera = () => {  
   // AWS.config.update({region:'ap-northeast-1'});
-  const [isCaptureEnable, setCaptureEnable] = useState<boolean>(false);
+  const [isCaptureEnable, setCaptureEnable] = useState<boolean>(true);
   const webcamRef = useRef<Webcam>(null);
   const [url, setUrl] = useState<string | null>(null);
   const capture = useCallback(() => {
@@ -83,6 +83,7 @@ export const Camera = () => {
       setUrl(imageSrc);
       setRekognizeResult(undefined);
     }
+    setCaptureEnable(false) // カメラオフ
   }, [webcamRef]);
 
   if (typeof window !== "undefined") {
@@ -99,20 +100,21 @@ export const Camera = () => {
 
   return (
     <>
-    <main className='photoarea'>
+    <main className={styles.photoarea}>
 
     
-      <header>
+      <header className={styles.text}>
         <h1>カメラアプリ （顔分析付き) </h1>
       </header>
-      {isCaptureEnable || (
+      {/* {isCaptureEnable || (
         <button className={styles.startbutton}onClick={() => setCaptureEnable(true)}>開始</button>
-      )}
+      )} */}
       {isCaptureEnable && (
         <>
-         <div>
-          <button className={styles.endbutton} onClick={() => setCaptureEnable(false)}>終了</button>
-         </div>
+         {/* <div>
+          <img className={styles.endbutton} onClick={() => setCaptureEnable(false)} src="/images/end.svg" alt="終了アイコン" />
+         </div> */}
+         {/* <> */}
          <div>
           <Webcam
              audio={false}
@@ -123,10 +125,14 @@ export const Camera = () => {
              videoConstraints={videoConstraints}
             />
          </div>
-         <button className={styles.capturebutton}onClick={capture}></button>
-         <button className={styles.outer_capturebutton}></button>
         </>
-      )}
+        )}
+        {isCaptureEnable ? (
+         <><button className={styles.capturebutton}onClick={capture}></button>
+         <button className={styles.outer_capturebutton}></button></>) : 
+         <p style={{ color: 'red' }}>falseです</p>
+        }
+      {/* )} */}
       {url && (
         <>
          <div>
@@ -134,6 +140,7 @@ export const Camera = () => {
             onClick={() => {
               setUrl(null);
               setRekognizeResult(undefined);
+              setCaptureEnable(true)  // カメラオン
             }}
           >
             削除
