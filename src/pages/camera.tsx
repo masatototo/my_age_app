@@ -128,30 +128,28 @@ export const Camera = () => {
         </>
         )}
         {isCaptureEnable ? (
-         <><button className={styles.capturebutton}onClick={capture}></button>
-         <button className={styles.outer_capturebutton}></button></>) : 
-         <p style={{ color: 'red' }}>falseです</p>
+         <><img className={styles.capturebutton}onClick={capture} src="/images/CaptureButton.svg" alt="キャプチャボタン" /></>) : 
+         <p style={{ color: 'red' }}>false</p>
         }
       {/* )} */}
       {url && (
         <>
          <div>
-          <button
+          <img className={styles.returnbutton}
             onClick={() => {
               setUrl(null);
               setRekognizeResult(undefined);
               setCaptureEnable(true)  // カメラオン
             }}
-          >
-            削除
-          </button>
-          <button onClick={() => rekognizeHandler()}>分析</button>
+            src="/images/Return.svg" alt="戻るボタン">
+          </img>
+          <button className={styles.resultbutton} onClick={() => rekognizeHandler()}>Result</button>
          </div>
          <div>
           <img src={url} alt="Screenshot" />
          </div>
          {typeof rekognizeResult !== "undefined" && (
-          <div>
+          <div className={styles.ageResult}>
             <div>{"Confidence: " + getConfidence(rekognizeResult)}</div>
             <div>
               {"AgeRange: " +

@@ -1,34 +1,23 @@
-.capturebutton {
-    /* z-index: 1; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* right: 21rem; */
-    /* position: absolute; */
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color:white;
-    border-color: black;
-    border: solid;
-}
 
-.outer_capturebutton {
-    /* position: relative; */
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    background-color: white;
-    border-color: white;
-    border-width: thin;
-}
 
 .photoarea {
     /* position: relative; */
     height: 100vh;
-    background-color: rgb(13, 13, 13);
+    background-color: rgb(8, 8, 8);
 }
 
 .text h1 {
     color: white;
+}
+
+.ageResult {
+    color: white;
+}
+
+.resultbutton {
+    background-color: #869ef5;
+    width: 4rem;
+    height: 2.5rem;
+    border-radius:  35%;
+    border: solid;
 }
