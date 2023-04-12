@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useContext } from 'react';
 import Webcam from "react-webcam";
 import styles from "../styles/camera.module.css";
 import {
@@ -7,7 +7,9 @@ import {
   FaceDetailList,
 } from "aws-sdk/clients/rekognition";
 import AWS from "aws-sdk";
+import Link from 'next/link';
 
+import { rekognizeResults } from './_app'
 
 import { ClassNames } from '@emotion/react';
 
@@ -18,11 +20,11 @@ import { Buffer } from 'buffer';
 
 
 
-const videoConstraints = {
-  width: 540,
-  height: 720,
-  facingMode: "user",
-};
+// const videoConstraints = {
+//   width: 540,
+//   height: 720,
+//   facingMode: "user",
+// };
 
 AWS.config.update({
   accessKeyId: "AKIA5S63C2P4B4MDTFGL",
@@ -73,6 +75,9 @@ const getIsWearingSunGlasses = (
 
 
 export const Camera = () => {  
+  const { resultData, setResultData } = useContext(rekognizeResults);
+  const [facingMode, setFacingMode] = useState("user"); // userがフロントカメラ、environmentがリアカメラ
+
   // AWS.config.update({region:'ap-northeast-1'});
   const [isCaptureEnable, setCaptureEnable] = useState<boolean>(true);
   const webcamRef = useRef<Webcam>(null);
@@ -95,17 +100,35 @@ export const Camera = () => {
   const rekognizeHandler = async () => {
     const result: DetectFacesResponse = await detectFaces(url as string);
     setRekognizeResult(result);
-    console.log(result);
+    setResultData(result);
+    // console.log(result);
   };
+
+  const handleSwitchCamera = () => {
+    setFacingMode((prevMode) => {
+      // 前回のモードによって、次のモードを設定する
+      if (prevMode === "user") {
+        return "environment";
+      } else {
+        return "user";
+      }
+    });
+  };
+
+  const videoConstraints = {
+    facingMode: facingMode // facingModeに設定することで、切り替えが可能になる
+  };
+
+
 
   return (
     <>
     <main className={styles.photoarea}>
-
     
-      <header className={styles.text}>
+    
+      {/* <header className={styles.text}>
         <h1>カメラアプリ （顔分析付き) </h1>
-      </header>
+      </header> */}
       {/* {isCaptureEnable || (
         <button className={styles.startbutton}onClick={() => setCaptureEnable(true)}>開始</button>
       )} */}
@@ -118,7 +141,7 @@ export const Camera = () => {
          <div>
           <Webcam
              audio={false}
-             width={414}
+             width={730}
              height={552}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
@@ -127,15 +150,29 @@ export const Camera = () => {
          </div>
         </>
         )}
-        {isCaptureEnable ? (
-         <><img className={styles.capturebutton}onClick={capture} src="/images/CaptureButton.svg" alt="キャプチャボタン" /></>) : 
-         <p style={{ color: 'red' }}>false</p>
+        {isCaptureEnable && (
+         <div className={styles.capturebutton}>
+          <img onClick={capture} src="/images/CaptureButton.svg" alt="キャプチャボタン" />
+         </div>)
+        //  <p style={{ color: 'red' }}>false</p>
         }
       {/* )} */}
       {url && (
         <>
          <div>
-          <img className={styles.returnbutton}
+          {/* <img className={styles.returnbutton}
+            onClick={() => {
+              setUrl(null);
+              setRekognizeResult(undefined);
+              setCaptureEnable(true)  // カメラオン
+            }}
+            src="/images/Return.svg" alt="戻るボタン">
+          </img> */}
+         </div>
+         <div>
+          <img src={url} alt="Screenshot" />
+         </div>
+         <img className={styles.returnbutton}
             onClick={() => {
               setUrl(null);
               setRekognizeResult(undefined);
@@ -143,11 +180,9 @@ export const Camera = () => {
             }}
             src="/images/Return.svg" alt="戻るボタン">
           </img>
+          <Link href="/resultPage"> 
           <button className={styles.resultbutton} onClick={() => rekognizeHandler()}>Result</button>
-         </div>
-         <div>
-          <img src={url} alt="Screenshot" />
-         </div>
+          </Link>
          {typeof rekognizeResult !== "undefined" && (
           <div className={styles.ageResult}>
             <div>{"Confidence: " + getConfidence(rekognizeResult)}</div>

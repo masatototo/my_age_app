@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap');
+
+
 .main {
   height: 100vh;
   width: 100vw;
@@ -15,21 +19,24 @@
 }
 
 .main h1 {
+  font-family: 'Dosis', 'M PLUS 1p', sans-serif;
   margin-top: 5rem;
   text-align: center;
 }
 
 
 .playbutton {
+  font-family: 'Dosis', sans-serif;
   margin: 3rem auto 0 auto;
   text-align: center;
   background-color: rgb(198, 234, 243);
   width: 9rem;
   padding: 1rem 0;
   border-radius: .7rem;
-  font-size: 150%;
+  font-size: 200%;
   font-weight: bold;
   text-decoration: none;
+  color: black;
 }
 
 .camerabutton {
