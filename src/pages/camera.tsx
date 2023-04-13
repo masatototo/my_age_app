@@ -125,7 +125,7 @@ export const Camera = () => {
     <>
     <main className={styles.photoarea}>
     
-    
+    <button onClick={handleSwitchCamera}>カメラ切り替え</button>
       {/* <header className={styles.text}>
         <h1>カメラアプリ （顔分析付き) </h1>
       </header> */}
@@ -141,7 +141,7 @@ export const Camera = () => {
          <div>
           <Webcam
              audio={false}
-             width={730}
+             width={414}
              height={552}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
