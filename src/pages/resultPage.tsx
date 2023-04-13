@@ -19,8 +19,8 @@ const resultPage = (props: Props) => {
   return (
     <>
     <Head>
-    <title>The post's title</title>
-    <meta property="og:image" content="https://my-age-app.vercel.app/api/og?title=my post title"/>
+      <title>Hello world</title>
+      <meta key="og:image" property="og:image" content="https://example.com/api/og"/>
     </Head>
     <div className={styles.result_text}>
     <Link href="/camera">
