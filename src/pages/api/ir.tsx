@@ -26,3 +26,4 @@ export default function handler() {
 
 
 // https://zenn.dev/monicle/articles/f02e4a12da960b
+// https://unique1.co.jp/column/sns_operation/3033/
