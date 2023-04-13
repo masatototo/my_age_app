@@ -101,7 +101,7 @@ export const Camera = () => {
     const result: DetectFacesResponse = await detectFaces(url as string);
     setRekognizeResult(result);
     setResultData(result);
-    // console.log(result);
+    console.log(result);
   };
 
   const handleSwitchCamera = () => {
@@ -125,7 +125,7 @@ export const Camera = () => {
     <>
     <main className={styles.photoarea}>
     
-    <button onClick={handleSwitchCamera}>カメラ切り替え</button>
+    <img onClick={handleSwitchCamera} src="/images/Rotate.svg" alt="カメラ切替"></img>
       {/* <header className={styles.text}>
         <h1>カメラアプリ （顔分析付き) </h1>
       </header> */}
@@ -172,6 +172,7 @@ export const Camera = () => {
          <div>
           <img src={url} alt="Screenshot" />
          </div>
+         <div className={styles.container}>
          <img className={styles.returnbutton}
             onClick={() => {
               setUrl(null);
@@ -183,6 +184,7 @@ export const Camera = () => {
           <Link href="/resultPage"> 
           <button className={styles.resultbutton} onClick={() => rekognizeHandler()}>Result</button>
           </Link>
+          </div>
          {typeof rekognizeResult !== "undefined" && (
           <div className={styles.ageResult}>
             <div>{"Confidence: " + getConfidence(rekognizeResult)}</div>

@@ -12,14 +12,31 @@
     color: white;
 }
 
-.ageResult {
+/* .ageResult {
     color: white;
-}
+} */
 
 .resultbutton {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto; */
     background-color: #869ef5;
     width: 4rem;
     height: 2.5rem;
     border-radius:  35%;
     border: solid;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .returnbutton {
+    position: absolute;
+   left: 0; 
+  }
