@@ -20,7 +20,7 @@ const resultPage = (props: Props) => {
     <>
     <Head>
       <title>Hello world</title>
-      <meta key="og:image" property="og:image" content="https://example.com/api/ir"/>
+      <meta key="og:image" property="og:image" content="https://my-age-app.vercel.app/api/ir"/>
     </Head>
     <div className={styles.result_text}>
     <Link href="/camera">
