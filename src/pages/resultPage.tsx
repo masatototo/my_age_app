@@ -4,6 +4,7 @@ import { rekognizeResults } from './_app'
 import styles from '../styles/resultPage.module.css';
 import Link from 'next/link';
 import Head from 'next/head';
+import { TwitterShareButton, TwitterIcon } from 'react-share';
 
 type Props = {
   title: string
@@ -37,13 +38,16 @@ const resultPage = (props: Props) => {
       <p>High : {resultData?.FaceDetails[0].AgeRange.High}</p>
       <p>Low : {resultData?.FaceDetails[0].AgeRange.Low}</p>
       {/* オプショナルチェーン */}
-      <a
+      <TwitterShareButton url="https://my-age-app.vercel.app/resultPage" title="My Age Result">
+    <TwitterIcon size={32} round />
+</TwitterShareButton>
+      {/* <a
           href={`https://twitter.com/intent/tweet`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <img src="/images/Meta.svg" alt="Twitterでシェア" />
-        </a>
+        </a> */}
     </div>
     </>
   )
