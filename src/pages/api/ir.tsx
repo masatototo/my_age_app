@@ -1,14 +1,15 @@
 import { ImageResponse } from '@vercel/og'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest } from 'next/server'
 
 export const config = {
   runtime: 'experimental-edge',
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function handler(req: NextRequest) {
   try {
-    // const { searchParams } = new URL(req.url)
-    // const title = searchParams.get('title')?.slice(0, 100) ?? 'Hello World'
+    const { searchParams } = new URL(req.url)
+    const id = searchParams.get('id')?.slice(0, 100) ?? 'Hello World'
   
   return new ImageResponse(
     (
@@ -23,7 +24,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           fontSize: '128px',
         }}
       >
-       {req.query.id}
+       {id}
       </div>
     )
   )
