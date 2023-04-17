@@ -1,10 +1,15 @@
 import { ImageResponse } from '@vercel/og'
+import { NextRequest } from 'next/server'
 
 export const config = {
   runtime: 'experimental-edge',
 }
 
-export default function handler() {
+export default function handler(req: NextRequest) {
+  try {
+    const { searchParams } = new URL(req.url)
+    const title = searchParams.get('title')?.slice(0, 100) ?? 'Hello World'
+  
   return new ImageResponse(
     (
       <div
@@ -18,12 +23,19 @@ export default function handler() {
           fontSize: '128px',
         }}
       >
-        Hello world!
+        Hello Me!
       </div>
     )
   )
+} catch (e) {
+  if (e instanceof Error) {
+    console.error(e.message)
+  }
+  return new Response(`Failed to generate the image`, {
+    status: 500,
+  })
 }
-
+}
 
 // https://zenn.dev/monicle/articles/f02e4a12da960b
 // https://unique1.co.jp/column/sns_operation/3033/
