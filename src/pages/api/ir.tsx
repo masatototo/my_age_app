@@ -23,7 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           fontSize: '128px',
         }}
       >
-       {req.query.id} 
+       HHHHHHH
       </div>
     )
   )
