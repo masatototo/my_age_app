@@ -9,7 +9,7 @@ export const config = {
 export default function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url)
-    const id = searchParams.get('id')?.slice(0, 100) ?? 'Hello World'
+    const id = searchParams.get('id')?.slice(0, 100) ?? 'error'
   
   return new ImageResponse(
     (
