@@ -19,7 +19,7 @@ const resultPage = (props: Props) => {
   return (
     <>
     <Head>
-      <title>Hello World</title>
+      <title>Result Page</title>
       <meta property="og:type" content="website" />
       <meta property="og:title" content="MyAge" />
       <meta property="og:description" content="顔診断" />
