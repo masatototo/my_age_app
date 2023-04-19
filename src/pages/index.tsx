@@ -13,7 +13,7 @@ export const Home = () => {
       <meta property="og:description" content="顔診断" />
       <meta property="og:url" content="https://my-age-app.vercel.app/" />
       <meta property="og:site_name" content="MyAge 顔診断" />
-      <meta key="og:image" property="og:image" content="https://my-age-app.vercel.app/api/dg"/>
+      <meta key="og:image" property="og:image" content="blob:https://vercel.com/f9582bfb-d169-46dc-baf6-b7b8f29c3709"/>
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@sasakimasato9" />
     </Head>
@@ -31,3 +31,4 @@ export const Home = () => {
 }
 
 export default Home
+
