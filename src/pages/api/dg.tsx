@@ -8,6 +8,7 @@ export const config = {
 
 export default function handler() {
   return new ImageResponse(
+    <>
     (
       <div
         style={{
@@ -20,8 +21,10 @@ export default function handler() {
           fontSize: '128px',
         }}
       >
-        <h1 className={styles.title}>MyAge 顔診断</h1>
+        MyAge 顔診断
       </div>
+      <img className={styles.cameraicon} src="/images/cameraIcon.svg" alt="カメラアイコン" />
     )
+    </>
   )
 }
