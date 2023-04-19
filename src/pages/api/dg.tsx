@@ -6,12 +6,7 @@ export const config = {
   runtime: 'experimental-edge',
 }
 
-
-export default async function handler() {
-  const fontData = await fetch(
-    new URL('../../assets/Roboto-Bold.ttf', import.meta.url)
-  ).then((res) => res.arrayBuffer())
-
+export default function handler() {
   return new ImageResponse(
     (
       
@@ -25,21 +20,11 @@ export default async function handler() {
           height: '100%',
           backgroundColor: '#869ef5',
           fontSize: '128px',
-          fontFamily: '"Roboto"',
         }}
       >
         MyAge 顔診断
       </div>
-    ),
-    {
-      fonts: [
-        {
-          name: 'Roboto',
-          data: fontData,
-          weight: 700,
-          style: 'normal',
-        },
-      ],
-    }
+      
+    )
   )
 }
