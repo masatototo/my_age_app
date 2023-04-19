@@ -53,14 +53,13 @@ export default function handler(req: NextRequest) {
     (
       <div
         style={{
-          color: 'red',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
           height: '100%',
           backgroundColor: 'white',
-          fontSize: '12px',
+          fontSize: '128px',
         }}
       >
        {id}

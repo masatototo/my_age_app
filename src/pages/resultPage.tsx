@@ -28,7 +28,7 @@ const resultPage = (props: Props) => {
       <p>High : {resultData?.FaceDetails[0].AgeRange.High}</p>
       <p>Low : {resultData?.FaceDetails[0].AgeRange.Low}</p>
       {/* オプショナルチェーン */}
-      <TwitterShareButton url="https://my-age-app.vercel.app/resultPage" title="My Age 顔診断">
+      <TwitterShareButton url="https://my-age-app.vercel.app/" title="My Age 顔診断">
     <TwitterIcon size={50} round />
 </TwitterShareButton>
       {/* <a
