@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap');
+
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(0deg, rgba(4, 202, 255, 1), rgba(19, 207, 244, 1) 17%, rgba(38, 213, 231, 1) 29%, rgba(55, 218, 219, 1) 38%, rgba(75, 224, 205, 1) 50%, rgba(92, 229, 193, 1) 64%, rgba(104, 233, 184, 1) 76%, rgba(120, 238, 172, 1) 89%, rgba(144, 245, 154, 1));
+  margin: auto;
+}
+
+.camera {
+  padding-top: 18rem;
+  text-align: center;
+}
+
+.cameraicon {
+  width: 5rem;
+}
+
+.main h1 {
+  font-family: 'Dosis', 'M PLUS 1p', sans-serif;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+
+.playbutton {
+  font-family: 'Dosis', sans-serif;
+  margin: 3rem auto 0 auto;
+  text-align: center;
+  background-color: rgb(198, 234, 243);
+  width: 9rem;
+  padding: 1rem 0;
+  border-radius: .7rem;
+  font-size: 200%;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.camerabutton {
+  text-decoration: none;
+}

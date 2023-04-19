@@ -14,6 +14,7 @@ export default function handler(req: NextRequest) {
     const id = searchParams.get('id')?.slice(0, 100) ?? 'Hello World'
   
   return new ImageResponse(
+    <>
     (
       <div
         style={{
@@ -29,6 +30,7 @@ export default function handler(req: NextRequest) {
        {id}
       </div>
     )
+    </>
   )
 } catch (e) {
   if (e instanceof Error) {
