@@ -22,7 +22,6 @@ export default function handler() {
           fontSize: '128px',
         }}
       >
-        <img  src="/images/cameraIcon.svg" alt="カメラアイコン" />
         MyAge 顔診断
       </div>
       
