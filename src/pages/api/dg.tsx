@@ -20,7 +20,7 @@ export default function handler() {
           fontSize: '128px',
         }}
       >
-        <h1>MyAge 顔診断</h1>
+        <h1 className={styles.title}>MyAge 顔診断</h1>
       </div>
     )
   )
