@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <>
     <Head>
-      <title>Result Page</title>
+      <title>Top Page</title>
       <meta property="og:type" content="website" />
       <meta property="og:title" content="MyAge" />
       <meta property="og:description" content="顔診断" />
