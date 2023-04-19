@@ -22,7 +22,7 @@ export default async function handler() {
           width: '100%',
           height: '100%',
           backgroundColor: 'white',
-          fontFamily: '"Roboto"',
+          fontFamily: '"Dosis"',
           fontWeight: 'bold',
           fontSize: '128px',
         }}
