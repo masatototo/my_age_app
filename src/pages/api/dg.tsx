@@ -19,7 +19,7 @@ export default function handler() {
           fontSize: '128px',
         }}
       >
-        顔診断 MyAge
+        MyAge 顔診断
       </div>
     )
   )
