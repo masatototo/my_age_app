@@ -9,7 +9,9 @@ export const config = {
 export default function handler() {
   return new ImageResponse(
     (
+      
       <div
+      
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -20,6 +22,7 @@ export default function handler() {
           fontSize: '128px',
         }}
       >
+        <img className={styles.cameraicon} src="/images/cameraIcon.svg" alt="カメラアイコン" />
         MyAge 顔診断
       </div>
       
