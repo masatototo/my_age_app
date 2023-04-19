@@ -23,7 +23,6 @@ export default function handler() {
       >
         MyAge 顔診断
       </div>
-      <img className={styles.cameraicon} src="/images/cameraIcon.svg" alt="カメラアイコン" />
     )
     </>
   )
