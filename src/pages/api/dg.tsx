@@ -8,7 +8,6 @@ export const config = {
 
 export default function handler() {
   return new ImageResponse(
-    <>
     (
       <div
         style={{
@@ -23,7 +22,7 @@ export default function handler() {
       >
         MyAge 顔診断
       </div>
+      
     )
-    </>
   )
 }
