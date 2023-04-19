@@ -16,7 +16,7 @@ export default function handler() {
           alignItems: 'center',
           width: '100%',
           height: '100%',
-          backgroundColor: 'blue',
+          backgroundColor: '#869ef5',
           fontSize: '128px',
         }}
       >
