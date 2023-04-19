@@ -1,5 +1,6 @@
 
 import { ImageResponse } from '@vercel/og'
+import styles from '../../styles/dg.module.css'
 
 export const config = {
   runtime: 'experimental-edge',
@@ -19,7 +20,7 @@ export default function handler() {
           fontSize: '128px',
         }}
       >
-        MyAge 顔診断
+        <h1>MyAge 顔診断</h1>
       </div>
     )
   )

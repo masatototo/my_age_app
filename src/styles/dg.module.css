@@ -18,10 +18,11 @@
   width: 5rem;
 }
 
-.main h1 {
+h1 {
   font-family: 'Dosis', 'M PLUS 1p', sans-serif;
   margin-top: 5rem;
   text-align: center;
+  color: red;
 }
 
 
