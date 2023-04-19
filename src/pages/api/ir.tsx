@@ -34,7 +34,7 @@ export default async function handler() {
         {
           name: 'Dosis',
           data: fontData,
-          weight: 700,
+          // weight: 700,
           style: 'normal',
         },
       ],
