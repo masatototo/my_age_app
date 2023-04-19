@@ -9,7 +9,7 @@ export const config = {
 
 export default async function handler() {
   const fontData = await fetch(
-    new URL('../styles/ir.module.css/Dosis-Bold.ttf', import.meta.url)
+    new URL('../../assets/Roboto-Bold.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer())
 
   return new ImageResponse(
@@ -22,7 +22,7 @@ export default async function handler() {
           width: '100%',
           height: '100%',
           backgroundColor: 'white',
-          fontFamily: '"Dosis"',
+          fontFamily: '"Roboto"',
           fontWeight: 'bold',
           fontSize: '128px',
         }}
@@ -32,9 +32,9 @@ export default async function handler() {
     {
       fonts: [
         {
-          name: 'Dosis',
+          name: 'Roboto',
           data: fontData,
-          // weight: 700,
+          weight: 700,
           style: 'normal',
         },
       ],
