@@ -147,7 +147,7 @@ export const Camera = () => {
           <Webcam
              audio={false}
              width={430}
-             height={490}
+             height={552}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
              videoConstraints={videoConstraints}
