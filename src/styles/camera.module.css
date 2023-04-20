@@ -8,14 +8,6 @@
     background-color: rgb(8, 8, 8);
 }
 
-.text h1 {
-    color: white;
-}
-
-/* .ageResult {
-    color: white;
-} */
-
 .resultbutton {
     /* display: flex;
     align-items: center;
@@ -39,4 +31,19 @@
   .returnbutton {
     position: absolute;
    left: 0; 
+  }
+
+  .headerContainer {
+    height: 10vh;
+    background-color: red;
+  }
+
+  .cameraImage {
+    height: 80vh;
+    background-color: yellow;
+  }
+
+  .footerContainer {
+    height: 10vh;
+    background-color: skyblue;
   }

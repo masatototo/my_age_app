@@ -123,9 +123,14 @@ export const Camera = () => {
 
   return (
     <>
-    <main className={styles.photoarea}>
-    
+    {/* <main className={styles.photoarea}> */}
+
+    <header>
+
+    <div className={styles.headerContainer}>
     <img onClick={handleSwitchCamera} src="/images/Rotate.svg" alt="カメラ切替"></img>
+    </div>
+    </header>
       {/* <header className={styles.text}>
         <h1>カメラアプリ （顔分析付き) </h1>
       </header> */}
@@ -138,7 +143,7 @@ export const Camera = () => {
           <img className={styles.endbutton} onClick={() => setCaptureEnable(false)} src="/images/end.svg" alt="終了アイコン" />
          </div> */}
          {/* <> */}
-         <div>
+         <div className={styles.cameraImage}>
           <Webcam
              audio={false}
              width={414}
@@ -150,6 +155,11 @@ export const Camera = () => {
          </div>
         </>
         )}
+        
+        <footer>
+        
+        <div className={styles.footerContainer}>
+
         {isCaptureEnable && (
          <div className={styles.capturebutton}>
           <img onClick={capture} src="/images/CaptureButton.svg" alt="キャプチャボタン" />
@@ -159,7 +169,6 @@ export const Camera = () => {
       {/* )} */}
       {url && (
         <>
-         <div>
           {/* <img className={styles.returnbutton}
             onClick={() => {
               setUrl(null);
@@ -168,7 +177,6 @@ export const Camera = () => {
             }}
             src="/images/Return.svg" alt="戻るボタン">
           </img> */}
-         </div>
          <div>
           <img src={url} alt="Screenshot" />
          </div>
@@ -185,6 +193,7 @@ export const Camera = () => {
           <button className={styles.resultbutton} onClick={() => rekognizeHandler()}>Result</button>
           </Link>
           </div>
+          
          {typeof rekognizeResult !== "undefined" && (
           <div className={styles.ageResult}>
             <div>{"Confidence: " + getConfidence(rekognizeResult)}</div>
@@ -204,7 +213,11 @@ export const Camera = () => {
          )}
        </>
       )}
-      </main>
+
+    </div>
+
+      </footer>
+      {/* </main> */}
     </>
     );
   };
