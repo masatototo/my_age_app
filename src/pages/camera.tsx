@@ -146,19 +146,14 @@ export const Camera = () => {
          </div> */}
          {/* <> */}
          <div className={styles.cameraImage}>
-        {/* <CssVarsProvider>
-          <AspectRatio variant="plain" ratio={(isMobile) ? "9/16" : "4/3"} sx={{width:"100%"}} my={2}> */}
           <Webcam
              audio={false}
              width={'100%'}
             //  height={500}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
-            //  screenshotQuality={1}
              videoConstraints={videoConstraints}
             />
-            {/* </AspectRatio>
-            </CssVarsProvider> */}
          </div>
         </>
         )}
@@ -171,7 +166,6 @@ export const Camera = () => {
          <div className={styles.capturebutton}>
           <img onClick={capture} src="/images/CaptureButton.svg" alt="キャプチャボタン" />
          </div>)
-        //  <p style={{ color: 'red' }}>false</p>
         }
         </div>
       {/* )} */}

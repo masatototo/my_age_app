@@ -39,6 +39,7 @@
   }
 
   .cameraImage {
+    margin: 0 auto;
     height: 80vh;
     background-color: black;
   }
@@ -51,4 +52,23 @@
   .Wrapper {
     height: 100vh;
     background-color: black;
+  }
+
+  
+  @media screen and (min-width:576px){
+    .cameraImage{
+      max-width: 540px;
+    }
+}
+
+@media screen and (min-width:768px){
+  .cameraImage{
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width:992px){
+    .cameraImage{
+      max-width: 960px;
+    }
   }
