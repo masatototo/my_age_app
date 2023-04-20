@@ -154,8 +154,8 @@ export const Camera = () => {
             //  height={500}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
-             screenshotQuality={1}
-             videoConstraints={(isMobile) ? {facingMode:{exact:"environment"}} : {facingMode:"user"}}
+            //  screenshotQuality={1}
+             videoConstraints={videoConstraints}
             />
             {/* </AspectRatio>
             </CssVarsProvider> */}
