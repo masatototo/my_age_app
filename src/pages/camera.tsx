@@ -14,6 +14,8 @@ import { rekognizeResults } from './_app'
 import { ClassNames } from '@emotion/react';
 
 import { Buffer } from 'buffer';
+import { AspectRatio, CssVarsProvider } from '@mui/joy';
+import { isMobile } from 'react-device-detect';
 
 // @ts-ignore
 // window.Buffer = Buffer;
@@ -144,14 +146,19 @@ export const Camera = () => {
          </div> */}
          {/* <> */}
          <div className={styles.cameraImage}>
+        <CssVarsProvider>
+          <AspectRatio variant="plain" ratio={(isMobile) ? "9/16" : "4/3"} sx={{width:"100%"}} my={2}>
           <Webcam
              audio={false}
              width={414}
              height={500}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
-             videoConstraints={videoConstraints}
+             screenshotQuality={1}
+             videoConstraints={(isMobile) ? {facingMode:{exact:"environment"}} : {facingMode:"user"}}
             />
+            </AspectRatio>
+            </CssVarsProvider>
          </div>
         </>
         )}

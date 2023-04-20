@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/joy": "^5.0.0-alpha.76",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
@@ -17,6 +19,7 @@
     "aws-sdk": "^2.1350.0",
     "next": "^13.3.0",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-share": "^4.4.1",
     "react-webcam": "^7.0.1",
