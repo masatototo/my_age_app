@@ -166,6 +166,7 @@ export const Camera = () => {
          </div>)
         //  <p style={{ color: 'red' }}>false</p>
         }
+        </div>
       {/* )} */}
       {url && (
         <>
@@ -213,8 +214,6 @@ export const Camera = () => {
          )}
        </>
       )}
-
-    </div>
 
       </footer>
       {/* </main> */}
