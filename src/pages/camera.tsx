@@ -146,8 +146,8 @@ export const Camera = () => {
          </div> */}
          {/* <> */}
          <div className={styles.cameraImage}>
-        <CssVarsProvider>
-          <AspectRatio variant="plain" ratio={(isMobile) ? "9/16" : "4/3"} sx={{width:"100%"}} my={2}>
+        {/* <CssVarsProvider>
+          <AspectRatio variant="plain" ratio={(isMobile) ? "9/16" : "4/3"} sx={{width:"100%"}} my={2}> */}
           <Webcam
              audio={false}
              width={414}
@@ -157,8 +157,8 @@ export const Camera = () => {
              screenshotQuality={1}
              videoConstraints={(isMobile) ? {facingMode:{exact:"environment"}} : {facingMode:"user"}}
             />
-            </AspectRatio>
-            </CssVarsProvider>
+            {/* </AspectRatio>
+            </CssVarsProvider> */}
          </div>
         </>
         )}
