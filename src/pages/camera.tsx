@@ -150,8 +150,8 @@ export const Camera = () => {
           <AspectRatio variant="plain" ratio={(isMobile) ? "9/16" : "4/3"} sx={{width:"100%"}} my={2}> */}
           <Webcam
              audio={false}
-             width={414}
-             height={500}
+             width={'100%'}
+            //  height={500}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
              screenshotQuality={1}
@@ -163,7 +163,7 @@ export const Camera = () => {
         </>
         )}
         
-        <footer>
+        <footer className={styles.footerWrapper}>
         
         <div className={styles.footerContainer}>
 

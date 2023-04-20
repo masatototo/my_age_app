@@ -35,15 +35,20 @@
 
   .headerContainer {
     height: 10vh;
-    background-color: red;
+    background-color: black;
   }
 
   .cameraImage {
     height: 80vh;
-    background-color: yellow;
+    background-color: black;
   }
 
   .footerContainer {
     height: 10vh;
-    background-color: skyblue;
+    background-color: black;
+  }
+
+  .footerWrapper {
+    height: 100vh;
+    background-color: black;
   }
