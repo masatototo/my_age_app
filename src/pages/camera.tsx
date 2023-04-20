@@ -163,7 +163,7 @@ export const Camera = () => {
         </>
         )}
         
-        <footer className={styles.footerWrapper}>
+        <footer>
         
         <div className={styles.footerContainer}>
 
@@ -185,9 +185,8 @@ export const Camera = () => {
             }}
             src="/images/Return.svg" alt="戻るボタン">
           </img> */}
-         <div>
+         <div className={styles.Wrapper}>
           <img src={url} alt="Screenshot" />
-         </div>
          <div className={styles.container}>
          <img className={styles.returnbutton}
             onClick={() => {
@@ -201,7 +200,7 @@ export const Camera = () => {
           <button className={styles.resultbutton} onClick={() => rekognizeHandler()}>Result</button>
           </Link>
           </div>
-          
+          </div>
          {typeof rekognizeResult !== "undefined" && (
           <div className={styles.ageResult}>
             <div>{"Confidence: " + getConfidence(rekognizeResult)}</div>
@@ -221,7 +220,6 @@ export const Camera = () => {
          )}
        </>
       )}
-
       </footer>
       {/* </main> */}
     </>
