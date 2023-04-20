@@ -146,8 +146,8 @@ export const Camera = () => {
          <div className={styles.cameraImage}>
           <Webcam
              audio={false}
-             width={430}
-             height={552}
+             width={440}
+             height={520}
              ref={webcamRef}
              screenshotFormat="image/jpeg"
              videoConstraints={videoConstraints}
