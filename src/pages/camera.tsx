@@ -5,6 +5,8 @@ import {
   DetectFacesRequest,
   DetectFacesResponse,
   FaceDetailList,
+  Emotions,
+  Emotion
 } from "aws-sdk/clients/rekognition";
 import AWS from "aws-sdk";
 import Link from 'next/link';
@@ -67,8 +69,15 @@ const getHighAge = (rekognizeResult: DetectFacesResponse): number => {
   return (rekognizeResult.FaceDetails as FaceDetailList)[0].AgeRange?.High!;
 };
 
-//分析結果からEyeglasses(サングラスを掛けているか)取得
-const getIsWearingSunGlasses = (
+//分析結果からEyeglasses（眼鏡を掛けているか）取得
+const getIsWearingEyeglasses = (
+  rekognizeResult: DetectFacesResponse
+): boolean => {
+  return (rekognizeResult.FaceDetails as FaceDetailList)[0].Eyeglasses?.Value!;
+};
+
+//分析結果からSunglasses（サングラスを掛けているか）取得
+const getIsWearingSunglasses = (
   rekognizeResult: DetectFacesResponse
 ): boolean => {
   return (rekognizeResult.FaceDetails as FaceDetailList)[0].Sunglasses?.Value!;
@@ -180,7 +189,7 @@ export const Camera = () => {
             src="/images/Return.svg" alt="戻るボタン">
           </img> */}
          <div className={styles.Wrapper}>
-          <img src={url} alt="Screenshot" />
+          <img  src={url} alt="Screenshot" /></div>
          <div className={styles.container}>
          <img className={styles.returnbutton}
             onClick={() => {
@@ -194,7 +203,7 @@ export const Camera = () => {
           <button className={styles.resultbutton} onClick={() => rekognizeHandler()}>Result</button>
           </Link>
           </div>
-          </div>
+          
          {typeof rekognizeResult !== "undefined" && (
           <div className={styles.ageResult}>
             <div>{"Confidence: " + getConfidence(rekognizeResult)}</div>
@@ -205,10 +214,10 @@ export const Camera = () => {
                getHighAge(rekognizeResult)}
             </div>
             <div>
-              {"Eyeglasses: " + getIsWearingSunGlasses(rekognizeResult)}
+              {"Eyeglasses: " + getIsWearingEyeglasses(rekognizeResult)}
             </div>
             <div>
-              {"Sunglasses: " + getIsWearingSunGlasses(rekognizeResult)}
+              {"Sunglasses: " + getIsWearingSunglasses(rekognizeResult)}
             </div>
           </div>
          )}

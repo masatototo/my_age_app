@@ -24,12 +24,13 @@ const resultPage = (props: Props) => {
     <Link href="/camera">
       <img src="/images/Cross.svg" alt="カメラページに戻る" />
     </Link>
-      <p>resultPage</p>
+      <h3>RESULT PAGE</h3>
+      <h4>Age Range</h4>
       <p>High : {resultData?.FaceDetails[0].AgeRange.High}</p>
       <p>Low : {resultData?.FaceDetails[0].AgeRange.Low}</p>
       {/* オプショナルチェーン */}
       <TwitterShareButton url="https://my-age-app.vercel.app/" title="My Age 顔診断">
-    <TwitterIcon size={50} round />
+    <TwitterIcon size={60} round />
 </TwitterShareButton>
       {/* <a
           href={`https://twitter.com/intent/tweet`}

@@ -50,7 +50,10 @@
   }
 
   .Wrapper {
-    height: 100vh;
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    height: 80vh;
     background-color: black;
   }
 
