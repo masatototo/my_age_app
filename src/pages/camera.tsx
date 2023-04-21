@@ -177,7 +177,6 @@ export const Camera = () => {
          </div>)
         }
         </div>
-      {/* )} */}
       {url && (
         <>
           {/* <img className={styles.returnbutton}
