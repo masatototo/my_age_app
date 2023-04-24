@@ -2,17 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap');
 
 
-/* .main {
+.main {
   height: 100dvh;
   width: 100vw;
   background-image: linear-gradient(0deg, rgba(4, 202, 255, 1), rgba(19, 207, 244, 1) 17%, rgba(38, 213, 231, 1) 29%, rgba(55, 218, 219, 1) 38%, rgba(75, 224, 205, 1) 50%, rgba(92, 229, 193, 1) 64%, rgba(104, 233, 184, 1) 76%, rgba(120, 238, 172, 1) 89%, rgba(144, 245, 154, 1));
   margin: auto;
-} */
+}
 
 .camera {
   height: 50vh;
-  width: 100vw;
-  background-image: linear-gradient(0deg, rgba(4, 202, 255, 1), rgba(19, 207, 244, 1) 17%, rgba(38, 213, 231, 1) 29%, rgba(55, 218, 219, 1) 38%, rgba(75, 224, 205, 1) 50%, rgba(92, 229, 193, 1) 64%, rgba(104, 233, 184, 1) 76%, rgba(120, 238, 172, 1) 89%, rgba(144, 245, 154, 1));
   padding-top: 18rem;
   text-align: center;
 }
@@ -21,18 +19,16 @@
   width: 5rem;
 }
 
-.Wrapper {
-  height: 50vh;
-  width: 100vw;
-  background-image: linear-gradient(0deg, rgba(4, 202, 255, 1), rgba(19, 207, 244, 1) 17%, rgba(38, 213, 231, 1) 29%, rgba(55, 218, 219, 1) 38%, rgba(75, 224, 205, 1) 50%, rgba(92, 229, 193, 1) 64%, rgba(104, 233, 184, 1) 76%, rgba(120, 238, 172, 1) 89%, rgba(144, 245, 154, 1));
-}
-
-.Wrapper h1 {
+.main h1 {
+  height: 5vh;
   font-family: 'Dosis', 'M PLUS 1p', sans-serif;
   margin-top: 5rem;
   text-align: center;
 }
 
+.Wrapper {
+  height: 30vh;
+}
 
 .playbutton {
   font-family: 'Dosis', sans-serif;
