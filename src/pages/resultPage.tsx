@@ -17,6 +17,7 @@ type Props = {
 const resultPage = (props: Props) => {
   const { title, description, url, type, imageUrl} = props
   const { resultData, setResultData } = useContext(rekognizeResults);
+  
   return (
     <>
     
@@ -28,6 +29,8 @@ const resultPage = (props: Props) => {
       <h4>Age Range</h4>
       <p>High : {resultData?.FaceDetails[0].AgeRange.High}</p>
       <p>Low : {resultData?.FaceDetails[0].AgeRange.Low}</p>
+      <p>Eyeglasses : {resultData?.FaceDetails[0].Eyeglasses.Value ? `メガネかけてます` : `メガネかけてません`}</p>
+      <p>Sunglasses : {resultData?.FaceDetails[0].Sunglasses.Value ? `サングラスかけてます`: `サングラスかけてません`}</p>
       {/* オプショナルチェーン */}
       <TwitterShareButton url="https://my-age-app.vercel.app/" title="My Age 顔診断">
     <TwitterIcon size={60} round />
