@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import styles from "../styles/index.module.css";
 import Link from 'next/link';
@@ -19,18 +17,15 @@ export const Home = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@sasakimasato9" />
     </Head>
-    {/* <div className={styles.main}> */}
-    
+    <div className={styles.main}>
       <div className={styles.camera}>
           <img className={styles.cameraicon} src="/images/cameraIcon.svg" alt="カメラアイコン" />
       </div>
-      <div className={styles.Wrapper}>
       <h1>My Age 顔診断</h1>
       <Link href="/camera" className={styles.camerabutton} >
       <div className={styles.playbutton}>Play</div>
       </Link>
-      </div>
-    {/* </div> */}
+    </div>
     </>
   )
 }
