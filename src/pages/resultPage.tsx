@@ -25,24 +25,25 @@ const resultPage = (props: Props) => {
       const result = emotions.reduce((a: any,b :any)=>a.Confidence>b.Confidence?a:b)
       switch(result.Type) {
         case 'SAD':
-          setEmotionResult('悲しんでいます')
+          setEmotionResult('😔')
           break;
         case 'HAPPY':
-          setEmotionResult('喜んでいます')
+          setEmotionResult('😆')
           break;
         case 'ANGRY':
+          setEmotionResult('😡')
           break;
         case 'CALM':
-          setEmotionResult('穏やかです')
+          setEmotionResult('😌')
           break;
         case 'FEAR':
-          setEmotionResult('怖がってます')
+          setEmotionResult('😱')
           break;
         case 'SURPRISED':
-          setEmotionResult('驚いてます')
+          setEmotionResult('😳')
           break;
         case 'CONFUSED':
-          setEmotionResult('戸惑っています')
+          setEmotionResult('😅')
           break;
       }
     }
