@@ -63,12 +63,12 @@ const resultPage = (props: Props) => {
       <div className={styles.result_text_data}>
       <p>High : {resultData?.FaceDetails[0].AgeRange.High}</p>
       <p>Low : {resultData?.FaceDetails[0].AgeRange.Low}</p>
-      <p>Eyeglasses : {resultData?.FaceDetails[0].Eyeglasses.Value ? `メガネかけてます` : `メガネかけてません`}</p>
-      <p>Sunglasses : {resultData?.FaceDetails[0].Sunglasses.Value ? `サングラスかけてます`: `サングラスかけてません`}</p>
+      <p>Eyeglasses : {resultData?.FaceDetails[0].Eyeglasses.Value ? `🤓` : `👓🙅‍♂️`}</p>
+      <p>Sunglasses : {resultData?.FaceDetails[0].Sunglasses.Value ? `😎`: `🕶🙅‍♂️`}</p>
       <p>Emotions : {emotionsResult}</p>
       </div>
       {/* オプショナルチェーン */}
-      <TwitterShareButton url="https://my-age-app.vercel.app/" title="My Age 顔診断">
+      <TwitterShareButton url="https://my-age-app.vercel.app/" title={`My Age 顔診断 High:${resultData?.FaceDetails[0].AgeRange.High} Low : ${resultData?.FaceDetails[0].AgeRange.Low} Emotions : ${emotionsResult}`}>
     <TwitterIcon size={60} round />
 </TwitterShareButton>
       {/* <a
